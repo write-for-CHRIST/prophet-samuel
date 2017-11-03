@@ -11,6 +11,7 @@ export default class Samuel {
   constructor(subject = new Subject()) {
     this._subject = subject;
     this._observable$ = this._subject.asObservable();
+    this._watcher = null;
   }
 
   /**
@@ -20,12 +21,14 @@ export default class Samuel {
    */
   _startListen(paths, options) {
     console.log('Start listening on:', paths);
-    watcher(paths, options, (eventName, fileName) => {
+    this._watcher = watcher(paths, options);
+    this._watcher.on('change', (eventName, fileName) => {
       this._subject.next({
         event: eventName,
         name: fileName
       });
     });
+    return this._watcher;
   }
 
   /**
@@ -36,5 +39,11 @@ export default class Samuel {
   listenOn(paths, options = DEFAULT_OPTIONS) {
     this._startListen(paths, options);
     return this._observable$;
+  }
+
+  stop() {
+    if (this._watcher !== null) {
+      this._watcher.close();
+    }
   }
 }

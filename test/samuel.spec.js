@@ -1,7 +1,7 @@
 /* global describe, it, before */
 
 import chai from 'chai';
-import { Samuel } from '../src/index';
+import Samuel from '../src/index';
 import { Subject } from 'rxjs/Subject';
 
 chai.expect();
@@ -15,8 +15,9 @@ describe('Prophet Samuel', () => {
     subject = new Subject();
     samuel = new Samuel(subject);
   });
-  describe('reactive', () => {
-    it('should listen on new value', () => {
+  describe('check core', () => {
+    it('should have core properties', () => {
+      expect(samuel).to.have.property('_watcher');
       expect(samuel).to.have.property('_subject');
       expect(samuel).to.have.property('_observable$');
     });

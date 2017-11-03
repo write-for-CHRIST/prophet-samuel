@@ -1,2 +1,3 @@
 import Samuel from './samuel';
-export { Samuel };
+
+export default Samuel;
