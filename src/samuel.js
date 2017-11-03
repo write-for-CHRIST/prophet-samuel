@@ -1,0 +1,40 @@
+import { Subject } from 'rxjs/Subject';
+import watcher from 'node-watch';
+
+const DEFAULT_OPTIONS = {
+  persistent: true,
+  recursive: false,
+  encoding: 'utf8'
+};
+
+export default class Samuel {
+  constructor(subject = new Subject()) {
+    this._subject = subject;
+    this._observable$ = this._subject.asObservable();
+  }
+
+  /**
+   * Start listen on file change and emit changed value
+   * @param {Array.string | string} paths - Array of paths or single path
+   * @param {Object=} options - Options for node-watch
+   */
+  _startListen(paths, options) {
+    console.log('Start listening on:', paths);
+    watcher(paths, options, (eventName, fileName) => {
+      this._subject.next({
+        event: eventName,
+        name: fileName
+      });
+    });
+  }
+
+  /**
+   * Return observable of file changed stream
+   * @param {Array.String|String} paths - Array of paths or single path
+   * @param {*} options - Options for node-watch
+   */
+  listenOn(paths, options = DEFAULT_OPTIONS) {
+    this._startListen(paths, options);
+    return this._observable$;
+  }
+}
