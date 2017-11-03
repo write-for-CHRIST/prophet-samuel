@@ -30,13 +30,13 @@ describe('Prophet Samuel', () => {
         expect(samuel.listening).to.be.equal(true);
         done();
       }, 100);
-    });
+    }).timeout(200);
     it('should stop listening', done => {
       samuel.stop();
       setTimeout(() => {
         expect(samuel.listening).to.be.equal(false);
         done();
       }, 100);
-    });
+    }).timeout(200);
   });
 });
