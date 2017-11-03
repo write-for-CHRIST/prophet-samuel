@@ -21,5 +21,12 @@ describe('Prophet Samuel', () => {
       expect(samuel).to.have.property('_subject');
       expect(samuel).to.have.property('_observable$');
     });
+    it('should listen for change and stop', () => {
+      expect(samuel.listening).to.be.equal(false);
+      samuel.listenOn(__dirname);
+      expect(samuel.listening).to.be.equal(true);
+      samuel.stop();
+      expect(samuel.listening).to.be.equal(false);
+    });
   });
 });
