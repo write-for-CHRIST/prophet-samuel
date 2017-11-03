@@ -12,6 +12,11 @@ export default class Samuel {
     this._subject = subject;
     this._observable$ = this._subject.asObservable();
     this._watcher = null;
+    this._isListening = false;
+  }
+
+  get listening() {
+    return this._isListening;
   }
 
   /**
@@ -28,6 +33,7 @@ export default class Samuel {
         name: fileName
       });
     });
+    this._isListening = !this._watcher.isClosed();
     return this._watcher;
   }
 
@@ -44,6 +50,7 @@ export default class Samuel {
   stop() {
     if (this._watcher !== null) {
       this._watcher.close();
+      this._isListening = false;
     }
   }
 }
