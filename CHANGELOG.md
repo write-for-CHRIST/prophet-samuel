@@ -1,3 +1,13 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/write-for-CHRIST/prophet-samuel/compare/v0.1.1...v0.1.2) (2017-11-03)
+
+
+### Features
+
+* **core:** add watcher getter ([6449def](https://github.com/write-for-CHRIST/prophet-samuel/commit/6449def))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/write-for-CHRIST/prophet-samuel/compare/v0.0.2...v0.1.1) (2017-11-03)
 
