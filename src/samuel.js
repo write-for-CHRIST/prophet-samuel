@@ -1,5 +1,6 @@
 import { Subject } from 'rxjs/Subject';
 import watcher from 'node-watch';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 const DEFAULT_OPTIONS = {
   persistent: true,
@@ -8,15 +9,21 @@ const DEFAULT_OPTIONS = {
 };
 
 export default class Samuel {
-  constructor(subject = new Subject()) {
+  constructor(debounce = 500, subject = new Subject()) {
     this._subject = subject;
-    this._observable$ = this._subject.asObservable();
+    this._observable$ = this._subject
+      .asObservable()
+      .distinctUntilChanged();
     this._watcher = null;
     this._isListening = false;
   }
 
   get listening() {
     return this._isListening;
+  }
+
+  get watcher() {
+    return this._watcher;
   }
 
   /**
@@ -33,7 +40,7 @@ export default class Samuel {
         name: fileName
       });
     });
-    this._isListening = !this._watcher.isClosed();
+    this._isListening = true;
     return this._watcher;
   }
 
@@ -48,7 +55,7 @@ export default class Samuel {
   }
 
   stop() {
-    if (this._watcher !== null) {
+    if (this._watcher !== null && this._isListening) {
       this._watcher.close();
       this._isListening = false;
     }
