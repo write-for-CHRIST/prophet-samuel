@@ -6,6 +6,7 @@ In the Bible, prophet Samuel always listen for God's Word before do something, t
 [![Coverage Status](https://coveralls.io/repos/github/write-for-CHRIST/prophet-samuel/badge.svg?branch=master)](https://coveralls.io/github/write-for-CHRIST/prophet-samuel?branch=master)
 [![David](https://david-dm.org/write-for-CHRIST/prophet-samuel.svg)](https://david-dm.org/write-for-CHRIST/prophet-samuel.svg)
 [![David](https://img.shields.io/david/dev/write-for-CHRIST/prophet-samuel.svg)](prophet-samuel)
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 
 ## Features
 
@@ -22,8 +23,13 @@ In the Bible, prophet Samuel always listen for God's Word before do something, t
 ```javascript
   const samuel = require('prophet-samuel');
 
-  // Low level
+  // Simple usage, only watch on single directory
   samuel.listenOn('/path/to/listen').subscribe((payload) => {
+    console.log(payload);
+  });
+
+  // Recursive mode
+  samuel.listenOn('/path/to/listen/recursively', { recursive: true}).subscribe((payload) => {
     console.log(payload);
   });
 ```
