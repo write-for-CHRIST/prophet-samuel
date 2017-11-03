@@ -17,8 +17,8 @@ describe('Prophet Samuel', () => {
   });
   describe('reactive', () => {
     it('should listen on new value', () => {
-      samuel.listenOn(__dirname);
-      expect(1).to.be.equal(1);
+      expect(samuel).to.have.property('_subject');
+      expect(samuel).to.have.property('_observable$');
     });
   });
 });
