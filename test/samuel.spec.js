@@ -23,20 +23,22 @@ describe('Prophet Samuel', () => {
       expect(samuel).to.have.property('watcher');
       expect(samuel).to.have.property('listening');
     });
-    it('should listen for change', done => {
+    it('should listen for change', function (done) {
+      this.timeout(200);
       expect(samuel.listening).to.be.equal(false);
       samuel.listenOn(__dirname);
       setTimeout(() => {
         expect(samuel.listening).to.be.equal(true);
         done();
       }, 100);
-    }).timeout(200);
-    it('should stop listening', done => {
+    });
+    it('should stop listening', function (done) {
+      this.timeout(200);
       samuel.stop();
       setTimeout(() => {
         expect(samuel.listening).to.be.equal(false);
         done();
       }, 100);
-    }).timeout(200);
+    });
   });
 });
