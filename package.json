@@ -15,7 +15,7 @@
     "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular",
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
-    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --timeout 10000 test/*.spec.js",
+    "test": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha --exit --timeout 10000 test/*.spec.js",
     "test:watch": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text mocha -w test/*.spec.js",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
