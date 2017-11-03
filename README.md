@@ -13,6 +13,10 @@ In the Bible, prophet Samuel always listen for God's Word before do something, t
 * Execute actions based on filtered pattern.
 * Support reactive functional programming.
 
+## Installation
+
+  `npm install @write-for-christ/prophet-samuel`
+
 ## How to use?
 
 ```javascript
