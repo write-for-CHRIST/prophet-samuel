@@ -1,5 +1,7 @@
 # @write-for-christ/prophet-samuel
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/write-for-CHRIST/prophet-samuel.svg)](https://greenkeeper.io/)
+
 In the Bible, prophet Samuel always listen for God's Word before do something, this module will help us listen for files changed and execute registered actions.
 
 [![Build Status](https://travis-ci.org/write-for-CHRIST/prophet-samuel.svg?branch=master)](https://travis-ci.org/write-for-CHRIST/prophet-samuel)
