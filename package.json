@@ -69,5 +69,11 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "src": {
+    "tagName": "v%s"
+  },
+  "github": {
+    "release": true
   }
 }
