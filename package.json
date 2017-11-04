@@ -1,6 +1,6 @@
 {
   "name": "@write-for-christ/prophet-samuel",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "In the Bible, prophet Samuel always listen for God's Word before do something, this module will help us listen for files changed and execute registered actions.",
   "main": "lib/prophet-samuel.js",
   "nyc": {
@@ -12,6 +12,7 @@
   },
   "scripts": {
     "commit": "git-cz",
+    "release": "cross-env GITHUB_TOKEN=95d918321ea0b8f2b3e93ba2909b9e3ac7f6a7ce release-it",
     "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular",
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
