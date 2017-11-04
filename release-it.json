@@ -4,7 +4,7 @@
   },
   "github": {
     "release": true,
-    "tokenRef": "95d918321ea0b8f2b3e93ba2909b9e3ac7f6a7ce"
+    "tokenRef": "GITHUB_TOKEN"
   },
   "buildCommand": "npm run build",
   "afterReleaseCommand": "echo Successfully released ${version} to ${dist.repo}.",
