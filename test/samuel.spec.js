@@ -7,7 +7,7 @@ chai.expect();
 
 const expect = chai.expect;
 
-describe('Prophet Samuel', () => {
+describe('core/samuel.js', () => {
   describe('check core functions', () => {
     it('should have core properties', () => {
       expect(samuel).to.have.property('_watcher');
