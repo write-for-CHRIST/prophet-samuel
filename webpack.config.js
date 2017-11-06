@@ -2,7 +2,7 @@
 
 const webpack = require('webpack');
 const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-const DashboardPlugin = require('webpack-dashboard/plugin');
+// const DashboardPlugin = require('webpack-dashboard/plugin');
 const path = require('path');
 const env = require('yargs').argv.env; // use --env with webpack 2
 
@@ -15,7 +15,7 @@ if (env === 'build') {
   plugins.push(new UglifyJsPlugin({ minimize: true }));
   outputFile = libraryName + '.min.js';
 } else {
-  plugins.push(new DashboardPlugin());
+  // plugins.push(new DashboardPlugin());
   outputFile = libraryName + '.js';
 }
 
