@@ -12,7 +12,8 @@
   },
   "scripts": {
     "commit": "git-cz",
-    "release": "cross-env GITHUB_TOKEN=f599f477b3e5880af693537b6ae434b98bae5002 release-it",
+    "release": "release-it",
+    "start": "nodemon index.js",
     "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular",
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
@@ -42,6 +43,7 @@
     "eslint-loader": "1.9.0",
     "istanbul": "^0.4.5",
     "mocha": "4.0.1",
+    "nodemon": "^1.12.1",
     "nyc": "^11.3.0",
     "webpack": "3.8.1",
     "webpack-dashboard": "^1.0.0",
