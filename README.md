@@ -1,6 +1,6 @@
 # @write-for-christ/prophet-samuel
 
-In the Bible, prophet Samuel always listen for God's Word before do something, this module will help us listen for files changed and execute registered actions.
+In the Bible, prophet Samuel always listen for God's Word before doing something, this module will help us listen for files changed and execute actions in reactive way.
 
 [![Build Status](https://travis-ci.org/write-for-CHRIST/prophet-samuel.svg?branch=master)](https://travis-ci.org/write-for-CHRIST/prophet-samuel)
 [![Coverage Status](https://coveralls.io/repos/github/write-for-CHRIST/prophet-samuel/badge.svg?branch=master)](https://coveralls.io/github/write-for-CHRIST/prophet-samuel?branch=master)
@@ -12,6 +12,7 @@ In the Bible, prophet Samuel always listen for God's Word before do something, t
 ## Features
 
 * Watch for all files changed.
+* Parse file path from changed file.
 * Execute actions based on filtered pattern.
 * Support reactive functional programming.
 
@@ -25,12 +26,30 @@ In the Bible, prophet Samuel always listen for God's Word before do something, t
   const samuel = require('prophet-samuel');
 
   // Simple usage, only watch on single directory
-  samuel.listenOn('/path/to/listen').subscribe((payload) => {
-    console.log(payload);
+  samuel.watch('/path/to/watch').subscribe((data) => {
+    console.log(data);
   });
 
   // Recursive mode
-  samuel.listenOn('/path/to/listen/recursively', { recursive: true}).subscribe((payload) => {
-    console.log(payload);
+  samuel.watch('/path/to/watch', { recursive: true}).subscribe((data) => {
+    console.log(data);
   });
+
+```
+
+* If a file changed at `/path/to/watch/sub/of/sub/dir/updated.txt` the `data` should be:
+
+```json
+   {
+     event: 'update',
+     name: '/path/to/watch/sub/of/sub/dir/updated.txt',
+     parse: {
+       dir: '/path/to/full/file/',
+       root: '/',
+       base: 'updated.txt',
+       name: 'updated',
+       ext: '.txt',
+       rel: '/sub/of/sub/dir/'
+     }
+   }
 ```
