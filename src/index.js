@@ -1,3 +1,3 @@
-import Samuel from './samuel';
+import Samuel from './core/samuel';
 
 export default (() => new Samuel())();
