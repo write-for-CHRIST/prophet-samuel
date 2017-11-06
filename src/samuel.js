@@ -1,7 +1,6 @@
 import { Subject } from 'rxjs/Subject';
 import watcher from 'node-watch';
 import 'rxjs/add/operator/distinctUntilChanged';
-import { parseRelPath } from './util';
 
 const DEFAULT_OPTIONS = {
   persistent: true,
@@ -38,8 +37,7 @@ export default class Samuel {
     this._watcher.on('change', (eventName, fileName) => {
       this._subject.next({
         event: eventName,
-        name: fileName,
-        parse: parseRelPath(paths, fileName)
+        name: fileName
       });
     });
     this._isListening = true;
