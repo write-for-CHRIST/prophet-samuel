@@ -1,20 +1,13 @@
 /* global describe, it, before */
 
 import chai from 'chai';
-import Samuel from '../src/index';
-import { Subject } from 'rxjs/Subject';
+import samuel from '../src/index';
 
 chai.expect();
 
 const expect = chai.expect;
-let samuel;
-let subject;
 
 describe('Prophet Samuel', () => {
-  before(() => {
-    subject = new Subject();
-    samuel = new Samuel(500, subject);
-  });
   describe('check core functions', () => {
     it('should have core properties', () => {
       expect(samuel).to.have.property('_watcher');
@@ -26,7 +19,7 @@ describe('Prophet Samuel', () => {
     it('should listen for change', function (done) {
       this.timeout(200);
       expect(samuel.listening).to.be.equal(false);
-      samuel.listenOn(__dirname);
+      samuel.watch(__dirname);
       setTimeout(() => {
         expect(samuel.listening).to.be.equal(true);
         done();

@@ -9,7 +9,7 @@ const DEFAULT_OPTIONS = {
 };
 
 export default class Samuel {
-  constructor(debounce = 500, subject = new Subject()) {
+  constructor(subject = new Subject()) {
     this._subject = subject;
     this._observable$ = this._subject
       .asObservable()
@@ -49,7 +49,7 @@ export default class Samuel {
    * @param {Array.String|String} paths - Array of paths or single path
    * @param {*} options - Options for node-watch
    */
-  listenOn(paths, options = DEFAULT_OPTIONS) {
+  watch(paths, options = DEFAULT_OPTIONS) {
     this._startListen(paths, options);
     return this._observable$;
   }
