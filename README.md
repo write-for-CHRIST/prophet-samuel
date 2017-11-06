@@ -26,17 +26,18 @@ In the Bible, prophet Samuel always listen for God's Word before doing something
   const samuel = require('prophet-samuel');
 
   // Simple usage, only watch on single directory
-  samuel.watch('/path/to/watch').subscribe((data) => {
+  samuel().watch('/path/to/watch').subscribe((data) => {
     console.log(data);
   });
 
   // Recursive mode
-  samuel.watch('/path/to/watch', { recursive: true}).subscribe((data) => {
+  samuel().watch('/path/to/watch', { recursive: true}).subscribe((data) => {
     console.log(data);
   });
 
 ```
 
+* Notice: Every time we call `samuel()` a new instance is allocated.
 * If a file changed at `/path/to/watch/sub/of/sub/dir/updated.txt` the `data` should be:
 
 ```js
