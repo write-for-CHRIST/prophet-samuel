@@ -39,7 +39,7 @@ In the Bible, prophet Samuel always listen for God's Word before doing something
 
 * If a file changed at `/path/to/watch/sub/of/sub/dir/updated.txt` the `data` should be:
 
-```json
+```js
    {
      event: 'update',
      name: '/path/to/watch/sub/of/sub/dir/updated.txt',
