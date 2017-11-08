@@ -1,6 +1,7 @@
 import { Subject } from 'rxjs/Subject';
 import watcher from 'node-watch';
 import 'rxjs/add/operator/distinctUntilChanged';
+import 'rxjs/add/operator/map';
 
 import { parseRelPath } from './util';
 
@@ -13,9 +14,7 @@ const DEFAULT_OPTIONS = {
 export default class Samuel {
   constructor(subject = new Subject()) {
     this._subject = subject;
-    this._observable$ = this._subject
-      .asObservable()
-      .distinctUntilChanged();
+    this._observable$ = this._subject.asObservable().distinctUntilChanged();
     this._watcher = null;
     this._isListening = false;
   }
@@ -34,14 +33,15 @@ export default class Samuel {
    * @param {Object=} options - Options for node-watch
    */
   _startListen(paths, options) {
-    console.log('Start listening on:', paths);
+    console.log('Watching: ', paths);
     this._watcher = watcher(paths, options);
     this._watcher.on('change', (eventName, fileName) => {
-      this._subject.next({
+      let data = Object.assign({}, parseRelPath(paths, fileName), {
         event: eventName,
-        name: fileName,
-        parse: parseRelPath(paths, fileName)
+        path: fileName
       });
+
+      this._subject.next(data);
     });
     this._isListening = true;
     return this._watcher;
