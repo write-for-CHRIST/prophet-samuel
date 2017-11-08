@@ -13,7 +13,7 @@
   "scripts": {
     "commit": "git-cz",
     "release": "release-it",
-    "start": "nodemon index.js",
+    "start": "nodemon ./demo/index.js",
     "changelog": "conventional-changelog --infile CHANGELOG.md --same-file --release-count 0 --preset angular",
     "build": "webpack --env build",
     "dev": "webpack --progress --colors --watch --env dev",
