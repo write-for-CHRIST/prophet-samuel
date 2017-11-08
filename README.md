@@ -44,7 +44,7 @@ In the Bible, prophet Samuel always listen for God's Word before doing something
    {
       event: 'update',
       path: '/path/to/watch/sub/of/sub/dir/updated.txt',
-      dir: '/path/to/full/file/',
+      dir: '/path/to/watch/sub/of/sub/dir',
       root: '/',
       base: 'updated.txt',
       name: 'updated',
