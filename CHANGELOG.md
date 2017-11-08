@@ -1,3 +1,18 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/write-for-CHRIST/prophet-samuel/compare/1.1.0...2.0.0) (2017-11-08)
+
+
+### Code Refactoring
+
+* **core:** flat the `parse` object in `data` and rename property `name` to `path` ([c7dcb85](https://github.com/write-for-CHRIST/prophet-samuel/commit/c7dcb85))
+
+
+### BREAKING CHANGES
+
+* **core:** flat the `parse` object in `data` and rename property `name` to `path`
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/write-for-CHRIST/prophet-samuel/compare/1.0.1...1.1.0) (2017-11-06)
 
