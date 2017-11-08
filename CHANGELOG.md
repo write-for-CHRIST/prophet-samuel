@@ -1,3 +1,23 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/write-for-CHRIST/prophet-samuel/compare/1.0.1...1.1.0) (2017-11-06)
+
+
+### Bug Fixes
+
+* **core:** export samuel instance every function call ([954fbf6](https://github.com/write-for-CHRIST/prophet-samuel/commit/954fbf6))
+
+
+### BREAKING CHANGES
+
+* **core:** Must call `samuel()` after import
+
+
+
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/write-for-CHRIST/prophet-samuel/compare/1.0.0...1.0.1) (2017-11-06)
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/write-for-CHRIST/prophet-samuel/compare/0.2.6...1.0.0) (2017-11-06)
 
