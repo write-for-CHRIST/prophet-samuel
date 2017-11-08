@@ -42,15 +42,13 @@ In the Bible, prophet Samuel always listen for God's Word before doing something
 
 ```js
    {
-     event: 'update',
-     name: '/path/to/watch/sub/of/sub/dir/updated.txt',
-     parse: {
-       dir: '/path/to/full/file/',
-       root: '/',
-       base: 'updated.txt',
-       name: 'updated',
-       ext: '.txt',
-       rel: '/sub/of/sub/dir/'
-     }
+      event: 'update',
+      path: '/path/to/watch/sub/of/sub/dir/updated.txt',
+      dir: '/path/to/full/file/',
+      root: '/',
+      base: 'updated.txt',
+      name: 'updated',
+      ext: '.txt',
+      rel: '/sub/of/sub/dir/'
    }
 ```
