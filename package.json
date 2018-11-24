@@ -22,7 +22,7 @@
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "dependencies": {
-    "node-watch": "^0.5.5",
+    "node-watch": "^0.5.9",
     "rxjs": "^5.5.2"
   },
   "devDependencies": {
