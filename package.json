@@ -47,7 +47,7 @@
     "nyc": "^11.3.0",
     "webpack": "3.10.0",
     "webpack-dashboard": "^1.0.0",
-    "yargs": "11.0.0"
+    "yargs": "13.2.0"
   },
   "repository": {
     "type": "git",
