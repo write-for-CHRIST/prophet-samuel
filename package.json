@@ -45,7 +45,7 @@
     "mocha": "5.0.0",
     "nodemon": "^1.12.1",
     "nyc": "^11.3.0",
-    "webpack": "3.10.0",
+    "webpack": "4.29.6",
     "webpack-dashboard": "^1.0.0",
     "yargs": "11.0.0"
   },
