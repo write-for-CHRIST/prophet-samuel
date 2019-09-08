@@ -46,7 +46,7 @@
     "nodemon": "^1.12.1",
     "nyc": "^11.3.0",
     "webpack": "3.10.0",
-    "webpack-dashboard": "^1.0.0",
+    "webpack-dashboard": "^3.2.0",
     "yargs": "11.0.0"
   },
   "repository": {
