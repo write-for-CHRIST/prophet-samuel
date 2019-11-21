@@ -36,7 +36,7 @@
     "chai": "4.1.2",
     "chai-rx": "0.0.4",
     "commitizen": "^2.9.6",
-    "coveralls": "^3.0.0",
+    "coveralls": "^3.0.8",
     "cross-env": "^5.1.1",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "4.16.0",
